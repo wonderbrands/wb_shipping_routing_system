@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_form_extension" model="ir.ui.view">
+        <field name="name">sale.order.form.extension</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="wb_srs_flag"/>
+                </group>
+                <group string="Shipping Options">
+                    <field name="wb_shipping_options">
+                        <tree editable="bottom">
+                            <field name="index"/>
+                            <field name="carrier"/>
+                            <field name="price"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
