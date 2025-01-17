@@ -13,7 +13,7 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'your_module_name/static/src/css/styles.css',
+            'static/src/css/styles.css',
         ],
     },
     'installable': True,
