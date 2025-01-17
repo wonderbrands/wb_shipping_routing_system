@@ -1,0 +1,16 @@
+/* Hacer que el tree con la clase .o_shipping_routing_tree sea scrollable horizontalmente */
+.o_shipping_routing_tree {
+    overflow-x: auto;  /* Habilita el desplazamiento horizontal */
+    display: block;    /* Asegura que el contenedor sea un bloque para aplicar el desplazamiento */
+    white-space: nowrap; /* Evita que el contenido se divida en varias líneas */
+}
+
+.o_shipping_routing_tree td, .o_shipping_routing_tree th {
+    white-space: nowrap;  /* Asegura que las celdas no se ajusten en varias líneas */
+}
+
+/* Si el tree es demasiado ancho, se habilitará la barra de desplazamiento horizontal */
+.o_shipping_routing_tree .oe_list_content {
+    max-width: 100%;
+    overflow-x: auto;  /* Aplica desplazamiento horizontal en caso de que el contenido sea más grande */
+}

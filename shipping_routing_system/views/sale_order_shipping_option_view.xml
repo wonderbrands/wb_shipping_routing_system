@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Vista tipo tree para las opciones de envío -->
+    <record id="view_shipping_option_tree" model="ir.ui.view">
+        <field name="name">sale.order.shipping.option.tree</field>
+        <field name="model">sale.order.shipping.option</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="false">
+                <field name="index" string="Índice"/>
+                <field name="carrier" string="Paquetería"/>
+                <field name="price" string="Precio"/>
+                <field name="platform" string="Plataforma"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista tipo form para las opciones de envío -->
+    <record id="view_shipping_option_form" model="ir.ui.view">
+        <field name="name">sale.order.shipping.option.form</field>
+        <field name="model">sale.order.shipping.option</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="index" string="Índice"/>
+                        <field name="carrier" string="Paquetería"/>
+                        <field name="price" string="Precio"/>
+                        <field name="platform" string="Plataforma"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

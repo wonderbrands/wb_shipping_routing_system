@@ -1,27 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <!-- Define the view for sale order -->
     <record id="view_sale_order_form_extension" model="ir.ui.view">
         <field name="name">sale.order.form.extension</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <!-- Insertamos nuestra nueva pestaña en el notebook existente -->
             <xpath expr="//notebook" position="inside">
-                <!-- Nueva pestaña para el Shipping Routing System -->
-                <page string="Shipping-Routing info">
+                <page string="Shipping-Routing Info">
+                    <!-- Mostrar bandera de SRS -->
                     <group>
-                    <field name="wb_srs_flag"/>
+                        <field name="wb_srs_flag"/>
                     </group>
-                    <group>
-                        <field name="product_name" readonly="1"/>
-                        <field name="product_dimensions" readonly="1"/>
+
+                    <!-- Campos generales de envío -->
+                    <group string="Datos del Envío">
+                        <field name="zip_code_shipper"/>
+                        <field name="zip_code_recipient"/>
                     </group>
-                    <group string="Opciones de paqueterías">
-                        <field name="wb_shipping_options">
+
+                    <!-- Tabla para dimensiones y productos -->
+                    <group string="Productos, Dimensiones y Opciones de Envío">
+                        <field name="routing_lines_ids"
+                               widget="section_and_note_one2many"
+                               mode="tree,kanban">
                             <tree editable="bottom">
-                                <field name="index"/>
-                                <field name="carrier"/>
-                                <field name="price"/>
+                                <!-- Títulos de las columnas -->
+                                <field name="product_name_srs" string="Producto"/>
+                                <field name="packing_length" string="Largo [cm]"/>
+                                <field name="packing_width" string="Ancho [cm]"/>
+                                <field name="packing_height" string="Alto [cm]"/>
+                                <field name="packing_weight" string="Peso [kg]"/>
+                                <field name="quantity" string="Cantidad"/>
+
+                                <!-- Botón funcional para cada fila -->
+                                <button name="action_open_shipping_options"
+                                        string="Opc. env."
+                                        type="object"
+                                        icon="fa-external-link"
+                                        class="btn-secondary"/>
+<!--                                        attrs="{'invisible': [('id', '=', False)]}"/>-->
                             </tree>
                         </field>
                     </group>
