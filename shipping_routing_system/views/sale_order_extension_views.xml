@@ -5,19 +5,27 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//sheet" position="inside">
-                <group>
+            <!-- Insertamos nuestra nueva pestaña en el notebook existente -->
+            <xpath expr="//notebook" position="inside">
+                <!-- Nueva pestaña para el Shipping Routing System -->
+                <page string="Shipping-Routing info">
+                    <group>
                     <field name="wb_srs_flag"/>
-                </group>
-                <group string="Shipping Options">
-                    <field name="wb_shipping_options">
-                        <tree editable="bottom">
-                            <field name="index"/>
-                            <field name="carrier"/>
-                            <field name="price"/>
-                        </tree>
-                    </field>
-                </group>
+                    </group>
+                    <group>
+                        <field name="product_name" readonly="1"/>
+                        <field name="product_dimensions" readonly="1"/>
+                    </group>
+                    <group string="Opciones de paqueterías">
+                        <field name="wb_shipping_options">
+                            <tree editable="bottom">
+                                <field name="index"/>
+                                <field name="carrier"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
