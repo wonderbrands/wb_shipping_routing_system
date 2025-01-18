@@ -28,8 +28,6 @@ class SaleOrderRoutingLine(models.Model):
     _name = 'sale.order.routing.line'
     _description = 'Líneas de Enrutamiento'
 
-    dummy_field = fields.Char(string="Dummy Field")
-
     # Relación con la orden de venta
     sale_order_id = fields.Many2one(
         comodel_name='sale.order',
@@ -38,12 +36,12 @@ class SaleOrderRoutingLine(models.Model):
     )
 
     # Campos específicos para productos y dimensiones
-    product_name_srs = fields.Char(string='Producto')
-    packing_length = fields.Float(string="Largo [cm]", readonly=False)
-    packing_width = fields.Float(string="Ancho [cm]", readonly=False)
-    packing_height = fields.Float(string="Alto [cm]", readonly=False)
-    packing_weight = fields.Float(string="Peso [kg]", readonly=False)
-    quantity = fields.Integer(string="Unidades", readonly=False)
+    product_name_srs = fields.Char(string='Producto', readonly=True)
+    packing_length = fields.Float(string="Largo [cm]", readonly=True)
+    packing_width = fields.Float(string="Ancho [cm]", readonly=True)
+    packing_height = fields.Float(string="Alto [cm]", readonly=True)
+    packing_weight = fields.Float(string="Peso [kg]", readonly=True)
+    quantity = fields.Integer(string="Unidades", readonly=True)
 
     # Relación One2many para opciones de envío específicas de esta línea
     shipping_options_ids = fields.One2many(
@@ -87,7 +85,8 @@ class SaleOrderShippingOption(models.Model):
     )
 
     # Campos para las opciones de envío
-    index = fields.Integer(string='Índice')
-    carrier = fields.Char(string='Paquetería', required=True)
-    price = fields.Float(string='Precio', required=True)
-    platform = fields.Char(string='Plataforma', required=True)
+    index = fields.Integer(string='Índice', required=True, readonly=True)
+    carrier = fields.Text(string='Paquetería', required=True, readonly=True)
+    service_type = fields.Char(string='Tipo', required=True, readonly=True)
+    price = fields.Monetary(string='Precio', required=True, readonly=True)
+    platform = fields.Char(string='Plataforma', required=True, readonly=True)

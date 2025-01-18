@@ -11,11 +11,6 @@
         'views/sale_order_extension_views.xml',
         'views/sale_order_shipping_option_view.xml',
     ],
-    'assets': {
-        'web.assets_frontend': [
-            'static/src/css/styles.css',
-        ],
-    },
     'installable': True,
     'application': True,
     'auto_install': False,
