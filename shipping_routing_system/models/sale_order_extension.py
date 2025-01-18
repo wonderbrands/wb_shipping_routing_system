@@ -88,5 +88,6 @@ class SaleOrderShippingOption(models.Model):
     index = fields.Integer(string='Índice', required=True, readonly=True)
     carrier = fields.Text(string='Paquetería', required=True, readonly=True)
     service_type = fields.Char(string='Tipo', required=True, readonly=True)
-    price = fields.Monetary(string='Precio', required=True, readonly=True)
+    price = fields.Monetary(string='Precio', currency_field="currency_id", required=True, readonly=True)
+    currency_id = fields.Many2one('res.currency', string="Currency")
     platform = fields.Char(string='Plataforma', required=True, readonly=True)
