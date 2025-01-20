@@ -24,7 +24,7 @@
                         <field name="routing_lines_ids"
                                widget="section_and_note_one2many"
                                mode="tree,kanban">
-                            <tree editable="bottom">
+                            <tree editable="bottom" create="false">
                                 <!-- Títulos de las columnas -->
                                 <field name="product_name_srs" string="Producto"/>
                                 <field name="packing_length" string="Largo [cm]"/>

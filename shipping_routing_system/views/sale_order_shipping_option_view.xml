@@ -8,7 +8,8 @@
                 <field name="index" string="Índice"/>
                 <field name="carrier" string="Paquetería"/>
                  <field name="service_type" string="Tipo"/>
-                <field name="price" string="Precio"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="price" string="Precio" widget="monetary"/>
                 <field name="platform" string="Plataforma"/>
             </tree>
         </field>
@@ -25,7 +26,8 @@
                         <field name="index" string="Índice"/>
                         <field name="carrier" string="Paquetería"/>
                         <field name="service_type" string="Tipo"/>
-                        <field name="price" string="Precio"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="price" string="Precio" widget="monetary"/>
                         <field name="platform" string="Plataforma"/>
                     </group>
                 </sheet>
