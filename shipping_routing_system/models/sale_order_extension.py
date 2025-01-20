@@ -5,9 +5,9 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     # Campos generales para todos los paquetes
-    zip_code_shipper = fields.Char(string="C.P Origen", readonly=True)
-    zip_code_recipient = fields.Char(string="C.P Destino", readonly=True)
-    wb_srs_flag = fields.Boolean(string='¿Procesado por SRS?',default=False, readonly=True) #
+    zip_code_shipper = fields.Char(string="C.P Origen", readonly=True, copy=False)
+    zip_code_recipient = fields.Char(string="C.P Destino", readonly=True, copy=False)
+    wb_srs_flag = fields.Boolean(string='¿Procesado por SRS?',default=False, readonly=True, copy=False) #
 
     # Relación One2many con el nuevo modelo para productos y dimensiones
     routing_lines_ids = fields.One2many(
