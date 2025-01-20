@@ -21,7 +21,7 @@
 
                     <!-- Tabla para dimensiones y productos -->
                     <group string="Productos, Dimensiones y Opciones de Envío">
-                        <div>
+<!--                        <div>-->
                             <field name="routing_lines_ids"
                                    widget="section_and_note_one2many"
                                    mode="tree">
@@ -43,7 +43,7 @@
     <!--                                        attrs="{'invisible': [('id', '=', False)]}"/>-->
                                 </tree>
                             </field>
-                        </div>
+<!--                        </div>-->
                     </group>
                 </page>
             </xpath>
