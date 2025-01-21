@@ -21,6 +21,9 @@
         <field name="model">sale.order.shipping.option</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <h2><t t-esc="context.get('default_name', 'Opciones de envío')"/></h2>
+                </header>
                 <sheet>
                     <group>
                         <field name="index" string="Índice"/>

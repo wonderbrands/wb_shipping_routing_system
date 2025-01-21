@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class SaleOrder(models.Model):
@@ -36,6 +36,7 @@ class SaleOrderRoutingLine(models.Model):
     )
 
     # Campos específicos para productos y dimensiones
+    sku_code = fields.Char(string='SKU')
     product_name_srs = fields.Char(string='Paquete', readonly=True)
     packing_length = fields.Float(string="Largo [cm]", readonly=True)
     packing_width = fields.Float(string="Ancho [cm]", readonly=True)
@@ -55,12 +56,13 @@ class SaleOrderRoutingLine(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Opciones de Envío',
+            'name': f'Opciones de envío para: {self.sku_code}',  # 'Opciones de envío',
             'res_model': 'sale.order.shipping.option',
             'view_mode': 'tree,form',
             'domain': [('routing_line_id', '=', self.id)],  # Filtrar opciones relacionadas con la línea
             'context': {
                 'default_routing_line_id': self.id,  # Predefinir la línea en nuevas opciones
+                'default_name': f'Opciones de envío para: NO PROCESADO'
             },
             'target': 'new',  # Abrir como popup modal
         }
