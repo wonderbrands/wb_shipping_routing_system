@@ -14,37 +14,37 @@
                     </group>
 
                     <!-- Campos generales de envío -->
-                    <group string="Datos del Envío">
+                    <group string="Datos y opciones de Envío">
                         <field name="zip_code_shipper"/>
                         <field name="zip_code_recipient"/>
                     </group>
 
                     <!-- Tabla para dimensiones y productos -->
-                    <group string="Productos, Dimensiones y Opciones de Envío">
-                        <div>
-                            <field name="routing_lines_ids"
-                                   widget="section_and_note_one2many"
-                                   mode="tree">
-                                <tree editable="bottom" create="false">
-                                    <!-- Títulos de las columnas -->
-                                    <field name="product_name_srs" string="Producto"/>
-                                    <field name="packing_length" string="Largo [cm]"/>
-                                    <field name="packing_width" string="Ancho [cm]"/>
-                                    <field name="packing_height" string="Alto [cm]"/>
-                                    <field name="packing_weight" string="Peso [kg]"/>
-                                    <field name="quantity" string="Cantidad"/>
+                    <div>
+                                <field name="routing_lines_ids"
+                                       widget="one2many_list"
+                                       mode="tree">
+<!--                                    <form>-->
+                                        <tree editable="bottom" create="false">
+                                            <!-- Títulos de las columnas -->
+                                            <field name="product_name_srs" string="Producto"/>
+                                            <field name="packing_length" string="Largo [cm]"/>
+                                            <field name="packing_width" string="Ancho [cm]"/>
+                                            <field name="packing_height" string="Alto [cm]"/>
+                                            <field name="packing_weight" string="Peso [kg]"/>
+                                            <field name="quantity" string="Cantidad"/>
 
-                                    <!-- Botón funcional para cada fila -->
-                                    <button name="action_open_shipping_options"
-                                            string="Opc. env."
-                                            type="object"
-                                            icon="fa-external-link"
-                                            class="btn-secondary"/>
-    <!--                                        attrs="{'invisible': [('id', '=', False)]}"/>-->
-                                </tree>
-                            </field>
-                        </div>
-                    </group>
+                                            <!-- Botón funcional para cada fila -->
+                                            <button name="action_open_shipping_options"
+                                                    string="Opc. env."
+                                                    type="object"
+                                                    icon="fa-external-link"
+                                                    class="btn-secondary"/>
+            <!--                                        attrs="{'invisible': [('id', '=', False)]}"/>-->
+                                        </tree>
+<!--                                    </form>-->
+                                </field>
+                    </div>
                 </page>
             </xpath>
         </field>

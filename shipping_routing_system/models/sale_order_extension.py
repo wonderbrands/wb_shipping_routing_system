@@ -36,7 +36,7 @@ class SaleOrderRoutingLine(models.Model):
     )
 
     # Campos específicos para productos y dimensiones
-    product_name_srs = fields.Char(string='Producto', readonly=True)
+    product_name_srs = fields.Char(string='Paquete', readonly=True)
     packing_length = fields.Float(string="Largo [cm]", readonly=True)
     packing_width = fields.Float(string="Ancho [cm]", readonly=True)
     packing_height = fields.Float(string="Alto [cm]", readonly=True)
