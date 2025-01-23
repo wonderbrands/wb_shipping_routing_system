@@ -27,7 +27,7 @@
 <!--                                    <form>-->
                                         <tree editable="bottom" create="false">
                                             <!-- Títulos de las columnas -->
-                                            <field name="product_name_srs" string="Paquete"/>
+                                            <field name="product_display_name" string="Paquete"/>
                                             <field name="packing_length" string="Largo [cm]"/>
                                             <field name="packing_width" string="Ancho [cm]"/>
                                             <field name="packing_height" string="Alto [cm]"/>

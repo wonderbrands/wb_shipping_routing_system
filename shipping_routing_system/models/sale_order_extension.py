@@ -67,6 +67,18 @@ class SaleOrderRoutingLine(models.Model):
             'target': 'new',  # Abrir como popup modal
         }
 
+    # Campo del SKY? y nombre concatenados
+    product_display_name = fields.Char(
+        string='Producto (SKU + Nombre)',
+        compute='_compute_product_display_name',
+        store=True,
+    )
+
+    @api.depends('sku_code', 'product_name_srs')
+    def _compute_product_display_name(self):
+        for record in self:
+            record.product_display_name = f"{record.sku_code or ''} - {record.product_name_srs or ''}"
+
 
 class SaleOrderShippingOption(models.Model):
     _name = 'sale.order.shipping.option'
