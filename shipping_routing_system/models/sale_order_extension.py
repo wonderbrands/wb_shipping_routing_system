@@ -105,3 +105,8 @@ class SaleOrderShippingOption(models.Model):
     currency_id = fields.Many2one('res.currency', string="Moneda", default=lambda self: self.env.company.currency_id.id)  # 33
     price = fields.Monetary(string='Precio', readonly=True, currency_field='currency_id')
     platform = fields.Char(string='Plataforma', required=True, readonly=True)
+
+    package_quantities = fields.Integer(string="Cantidad", readonly=True)
+    strategy = fields.Char(string='Estrategia', required=True, readonly=True)
+    smallest_dimension = fields.Char(string='Dimención de agrupación', required=True, readonly=True)
+    total_cost = fields.Monetary(string='Precio total', readonly=True, currency_field='currency_id')
