@@ -56,7 +56,7 @@ class SaleOrderRoutingLine(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': f'Opciones de envío para: {self.sku_code}',  # 'Opciones de envío',
+            'name': f'Opciones de envío para: {self.sku_code} - {self.product_name_srs}',  # 'Opciones de envío',
             'res_model': 'sale.order.shipping.option',
             'view_mode': 'tree,form',
             'domain': [('routing_line_id', '=', self.id)],  # Filtrar opciones relacionadas con la línea
