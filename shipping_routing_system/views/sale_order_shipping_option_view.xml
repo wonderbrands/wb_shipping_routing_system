@@ -6,15 +6,15 @@
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
                  <field name="index" string="Índice"/>
+                <field name="platform" string="Plataforma"/>
                 <field name="carrier" string="Paquetería"/>
                 <field name="service_type" string="Tipo"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="price" string="Precio unitario" widget="monetary"/>
                 <field name="package_quantities" string="Cantidad de paquetes"/>
-                <field name="platform" string="Plataforma"/>
 
                 <field name="strategy" string="Estrategia"/>
-                <field name="smallest_dimension" string="Dimención de agrupación"/>
+                <field name="smallest_dimension" string="Dimensión de agrupación"/>
                 <field name="total_cost" string="Precio total" widget="monetary"/>
             </tree>
         </field>
@@ -32,15 +32,16 @@
                 <sheet>
                     <group>
                         <field name="index" string="Índice"/>
+                        <field name="platform" string="Plataforma"/>
                         <field name="carrier" string="Paquetería"/>
                         <field name="service_type" string="Tipo"/>
                         <field name="currency_id" invisible="1"/>
                         <field name="price" string="Precio unitario" widget="monetary"/>
                         <field name="package_quantities" string="Cantidad de paquetes"/>
-                        <field name="platform" string="Plataforma"/>
+
 
                         <field name="strategy" string="Estrategia"/>
-                        <field name="smallest_dimension" string="Dimención de agrupación"/>
+                        <field name="smallest_dimension" string="Dimensión de agrupación"/>
                         <field name="total_cost" string="Precio total" widget="monetary"/>
                     </group>
                 </sheet>
