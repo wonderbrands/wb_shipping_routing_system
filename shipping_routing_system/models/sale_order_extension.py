@@ -100,7 +100,7 @@ class SaleOrderShippingOption(models.Model):
 
     # Campos para las opciones de envío
     index = fields.Integer(string='Índice', required=True, readonly=True)
-    carrier = fields.Text(string='Paquetería', required=True, readonly=True)
+    carrier = fields.Char(string='Paquetería', required=True, readonly=True)
     service_type = fields.Char(string='Tipo', required=True, readonly=True)
     currency_id = fields.Many2one('res.currency', string="Moneda", default=lambda self: self.env.company.currency_id.id)  # 33
     price = fields.Monetary(string='Precio', readonly=True, currency_field='currency_id')
