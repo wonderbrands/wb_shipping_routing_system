@@ -11,7 +11,7 @@
                 <field name="service_type" string="Tipo"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="price" string="Precio unitario" widget="monetary"/>
-                <field name="package_quantities" string="Cantidad de paquetes"/>
+                <field name="package_quantities" string="No. de paquetes"/>
 
                 <field name="strategy" string="Estrategia"/>
                 <field name="smallest_dimension" string="Dimensión de agrupación"/>
@@ -37,7 +37,7 @@
                         <field name="service_type" string="Tipo"/>
                         <field name="currency_id" invisible="1"/>
                         <field name="price" string="Precio unitario" widget="monetary"/>
-                        <field name="package_quantities" string="Cantidad de paquetes"/>
+                        <field name="package_quantities" string="No. de paquetes"/>
 
 
                         <field name="strategy" string="Estrategia"/>
