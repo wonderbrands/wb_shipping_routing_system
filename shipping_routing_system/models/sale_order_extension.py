@@ -77,8 +77,7 @@ class SaleOrderRoutingLine(models.Model):
     @api.depends('sku_code', 'product_name_srs')
     def _compute_product_display_name(self):
         for record in self:
-            record.product_display_name = f"{record.sku_code or ''}: {record.product_name_srs or ''}"
-
+            record.product_display_name = f"{record.sku_code or ''} - {record.product_name_srs or ''}"
 
     # /////////////////////// Nuevo campo para opcion 1 de envio////////////////////////////////////////
     first_shipping_option = fields.Char(
@@ -92,7 +91,7 @@ class SaleOrderRoutingLine(models.Model):
         for record in self:
             first_option = record.shipping_options_ids.filtered(lambda opt: opt.index == 1)
             if first_option:
-                record.first_shipping_option = f"{first_option[0].carrier} ({first_option[0].platform}) - {first_option[0].currency_id.symbol}{first_option[0].price}"
+                record.first_shipping_option = f"{first_option[0].carrier} ({first_option[0].platform}): {first_option[0].currency_id.symbol}{first_option[0].price}"
             else:
                 record.first_shipping_option = "No hay opción 1"
 
