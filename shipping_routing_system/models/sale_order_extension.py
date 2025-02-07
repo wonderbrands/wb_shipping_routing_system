@@ -77,9 +77,9 @@ class SaleOrderRoutingLine(models.Model):
     @api.depends('sku_code', 'product_name_srs')
     def _compute_product_display_name(self):
         for record in self:
-            record.product_display_name = f"{record.sku_code or ''} - {record.product_name_srs or ''}"
+            record.product_display_name = f"{record.sku_code or ''}: {record.product_name_srs or ''}"
 
-            
+
     # /////////////////////// Nuevo campo para opcion 1 de envio////////////////////////////////////////
     first_shipping_option = fields.Char(
         string="Primera Opción de Envío",
