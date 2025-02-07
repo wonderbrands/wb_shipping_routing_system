@@ -91,7 +91,7 @@ class SaleOrderRoutingLine(models.Model):
         for record in self:
             first_option = record.shipping_options_ids.filtered(lambda opt: opt.index == 1)
             if first_option:
-                record.first_shipping_option = f"{first_option[0].carrier} ({first_option[0].platform}): {first_option[0].currency_id.symbol}{first_option[0].price}"
+                record.first_shipping_option = f"{first_option[0].carrier} ({first_option[0].platform}): {first_option[0].currency_id.symbol}{first_option[0].total_cost}"
             else:
                 record.first_shipping_option = "No hay opción 1"
 
