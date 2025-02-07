@@ -34,6 +34,9 @@
                                             <field name="packing_weight" string="Peso [kg]"/>
                                             <field name="quantity" string="Cantidad"/>
 
+                                            <!-- NUEVO: Campo para mostrar la primera opción de envío -->
+                                            <field name="first_shipping_option" string="1ra Opción de Envío" readonly="1"/>
+
                                             <!-- Botón funcional para cada fila -->
                                             <button name="action_open_shipping_options"
                                                     string="Opc. env."
