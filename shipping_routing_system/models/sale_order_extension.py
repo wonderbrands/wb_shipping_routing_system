@@ -128,5 +128,5 @@ class SaleOrderShippingOption(models.Model):
 
     # Campos 18 marzo 2025
     rate_id = fields.Char(string='Rate id', required=True, readonly=True)
-    quote_date = fields.Datetime(string='Fecha', required=True, readonly=False)
-    status_rate = fields.Char(string='Estado', required=True, readonly=False)
+    quote_date = fields.Datetime(string='Fecha', required=True, readonly=True)
+    status_rate = fields.Char(string='Estado', required=True, readonly=True)

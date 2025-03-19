@@ -17,9 +17,9 @@
                 <field name="smallest_dimension" string="Dimensión de agrupación"/>
                 <field name="total_cost" string="Precio total" widget="monetary"/>
 
-                <field name="quote_date" string="Fecha" readonly="1"/>
-                <field name="rate_id" string="Rate id" readonly="0"/>
-                <field name="status_rate" string="Estado" readonly="1"/>
+                <field name="quote_date" string="Fecha"/>
+                <field name="rate_id" string="Rate id" invisible="1"/>
+                <field name="status_rate" string="Estado"/>
             </tree>
         </field>
     </record>
@@ -48,9 +48,9 @@
                         <field name="smallest_dimension" string="Dimensión de agrupación"/>
                         <field name="total_cost" string="Precio total" widget="monetary"/>
 
-                        <field name="quote_date" string="Fecha" readonly="1"/>
-                        <field name="rate_id" string="Rate id" readonly="0"/>
-                        <field name="status_rate" string="Estado" readonly="1"/>
+                        <field name="quote_date" string="Fecha"/>
+                        <field name="rate_id" string="Rate id" invisible="1"/>
+                        <field name="status_rate" string="Estado"/>
                     </group>
                 </sheet>
             </form>
