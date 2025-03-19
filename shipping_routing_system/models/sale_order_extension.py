@@ -125,3 +125,8 @@ class SaleOrderShippingOption(models.Model):
     strategy = fields.Char(string='Estrategia', required=True, readonly=True)
     smallest_dimension = fields.Char(string='Dimención de agrupación', required=True, readonly=True)
     total_cost = fields.Monetary(string='Precio total', readonly=True, currency_field='currency_id')
+
+    # Campos 18 marzo 2025
+    rate_id = fields.Char(string='Rate id', required=True, readonly=True)
+    quote_date = fields.Datetime(string='Fecha', required=True, readonly=False)
+    status_rate = fields.Char(string='Estado', required=True, readonly=False)
