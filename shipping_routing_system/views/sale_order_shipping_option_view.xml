@@ -1,10 +1,10 @@
 <odoo>
-    <!-- Vista tipo tree para las opciones de envío -->
-    <record id="view_shipping_option_tree" model="ir.ui.view">
-        <field name="name">sale.order.shipping.option.tree</field>
+    <!-- Vista tipo list para las opciones de envío -->
+    <record id="view_shipping_option_list" model="ir.ui.view">
+        <field name="name">sale.order.shipping.option.list</field>
         <field name="model">sale.order.shipping.option</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" create="false">
+            <list editable="bottom" create="false">
                  <field name="index" string="Índice"/>
                 <field name="platform" string="Plataforma"/>
                 <field name="carrier" string="Paquetería"/>
@@ -20,7 +20,7 @@
                 <field name="quote_date" string="Fecha"/>
                 <field name="rate_id" string="Rate id" invisible="1"/>
                 <field name="status_rate" string="Estado"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -30,9 +30,6 @@
         <field name="model">sale.order.shipping.option</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <h2><t t-esc="context.get('default_name', 'Opciones de envío')"/></h2>
-                </header>
                 <sheet>
                     <group>
                         <field name="index" string="Índice"/>

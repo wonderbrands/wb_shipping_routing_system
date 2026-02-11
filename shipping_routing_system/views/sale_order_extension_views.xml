@@ -1,53 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Define the view for sale order -->
     <record id="view_sale_order_form_extension" model="ir.ui.view">
         <field name="name">sale.order.form.extension</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page string="Shipping-Routing Info">
-                    <!-- Mostrar bandera de SRS -->
+                <page string="Shipping-Routing Info" name="shipping_routing_info">
                     <group>
                         <field name="wb_srs_flag"/>
                     </group>
 
-                    <!-- Campos generales de envío -->
                     <group string="Datos y opciones de Envío">
                         <field name="zip_code_shipper"/>
                         <field name="zip_code_recipient"/>
                     </group>
 
-                    <!-- Tabla para dimensiones y productos -->
-                    <div>
-                                <field name="routing_lines_ids"
-                                       widget="one2many_list"
-                                       mode="tree">
-<!--                                    <form>-->
-                                        <tree editable="bottom" create="false">
-                                            <!-- Títulos de las columnas -->
-                                            <field name="product_display_name" string="Paquete"/>
-                                            <field name="packing_length" string="Largo [cm]"/>
-                                            <field name="packing_width" string="Ancho [cm]"/>
-                                            <field name="packing_height" string="Alto [cm]"/>
-                                            <field name="packing_weight" string="Peso [kg]"/>
-                                            <field name="quantity" string="Cantidad"/>
+                    <field name="routing_lines_ids">
+                        <list editable="bottom" create="false">
+                            <field name="product_display_name" string="Paquete"/>
+                            <field name="packing_length" string="Largo [cm]"/>
+                            <field name="packing_width" string="Ancho [cm]"/>
+                            <field name="packing_height" string="Alto [cm]"/>
+                            <field name="packing_weight" string="Peso [kg]"/>
+                            <field name="quantity" string="Cantidad"/>
 
-                                            <!-- NUEVO: Campo para mostrar la primera opción de envío -->
-                                            <field name="first_shipping_option" string="1ra Opción de Envío" readonly="1"/>
+                            <field name="first_shipping_option" string="1ra Opción de Envío" readonly="1"/>
 
-                                            <!-- Botón funcional para cada fila -->
-                                            <button name="action_open_shipping_options"
-                                                    string="Opc. env."
-                                                    type="object"
-                                                    icon="fa-external-link"
-                                                    class="btn-secondary"/>
-            <!--                                        attrs="{'invisible': [('id', '=', False)]}"/>-->
-                                        </tree>
-<!--                                    </form>-->
-                                </field>
-                    </div>
+                            <button name="action_open_shipping_options"
+                                    string="Opc. env."
+                                    type="object"
+                                    icon="fa-external-link"
+                                    class="btn btn-secondary"/>
+                        </list>
+                    </field>
                 </page>
             </xpath>
         </field>
