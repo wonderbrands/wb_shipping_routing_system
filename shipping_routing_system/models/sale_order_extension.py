@@ -58,7 +58,7 @@ class SaleOrderRoutingLine(models.Model):
             'type': 'ir.actions.act_window',
             'name': f'Opciones de envío para: {self.sku_code} - {self.product_name_srs}',  # 'Opciones de envío',
             'res_model': 'sale.order.shipping.option',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': [('routing_line_id', '=', self.id)],  # Filtrar opciones relacionadas con la línea
             'context': {
                 'default_routing_line_id': self.id,  # Predefinir la línea en nuevas opciones
